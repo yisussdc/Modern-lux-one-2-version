@@ -1,0 +1,45 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="plank1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3D2517" />
+      <stop offset="50%" stop-color="#4A3020" />
+      <stop offset="100%" stop-color="#351F13" />
+    </linearGradient>
+    <linearGradient id="plank2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#351F13" />
+      <stop offset="50%" stop-color="#42291A" />
+      <stop offset="100%" stop-color="#2D190E" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Repeating vertical wood planks -->
+  <!-- Plank A -->
+  <rect x="0" y="0" width="98" height="300" fill="url(#plank1)" />
+  <!-- Plank B -->
+  <rect x="100" y="0" width="98" height="300" fill="url(#plank2)" />
+  <!-- Plank C -->
+  <rect x="200" y="0" width="98" height="300" fill="url(#plank1)" />
+
+  <!-- Shadow between planks -->
+  <rect x="98" y="0" width="2" height="300" fill="#180C06" opacity="0.8"/>
+  <rect x="198" y="0" width="2" height="300" fill="#180C06" opacity="0.8"/>
+  <rect x="298" y="0" width="2" height="300" fill="#180C06" opacity="0.8"/>
+
+  <!-- Organic wood grain overlays -->
+  <g opacity="0.08" stroke="#FFFFFF" stroke-width="1.5" fill="none">
+    <path d="M10,0 C20,50 15,100 30,150 C45,200 20,250 10,300" />
+    <path d="M40,0 C60,70 50,150 70,220 C80,260 65,280 50,300" />
+    <path d="M120,0 C110,60 130,120 115,180 C100,240 125,270 140,300" />
+    <path d="M220,0 C240,80 230,160 250,240 C260,270 245,285 230,300" />
+  </g>
+  <g opacity="0.18" stroke="#180C06" stroke-width="1.2" fill="none">
+    <path d="M15,0 C25,50 20,100 35,150 C50,200 25,250 15,300" />
+    <path d="M45,0 C65,70 55,150 75,220 C85,260 70,280 55,300" />
+    <path d="M125,0 C115,60 135,120 120,180 C105,240 130,270 145,300" />
+    <path d="M225,0 C245,80 235,160 255,240 C265,270 250,285 235,300" />
+    
+    <!-- Wood knots -->
+    <path d="M 60,110 A 15,8 0 1,1 60,126" />
+    <path d="M 260,70 A 12,6 0 1,1 260,82" />
+  </g>
+</svg>

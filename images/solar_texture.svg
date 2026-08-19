@@ -1,0 +1,33 @@
+<svg width="120" height="120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cellGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#182531" />
+      <stop offset="100%" stop-color="#0E161C" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" fill="#0B0C10" />
+  
+  <!-- Solar cells with rounded corners -->
+  <rect x="2" y="2" width="54" height="54" rx="4" fill="url(#cellGrad)" />
+  <rect x="64" y="2" width="54" height="54" rx="4" fill="url(#cellGrad)" />
+  <rect x="2" y="64" width="54" height="54" rx="4" fill="url(#cellGrad)" />
+  <rect x="64" y="64" width="54" height="54" rx="4" fill="url(#cellGrad)" />
+  
+  <!-- Silver grid lines (busbars) -->
+  <line x1="0" y1="29" x2="120" y2="29" stroke="#ffffff" stroke-width="0.8" opacity="0.35" />
+  <line x1="0" y1="91" x2="120" y2="91" stroke="#ffffff" stroke-width="0.8" opacity="0.35" />
+  <line x1="29" y1="0" x2="29" y2="120" stroke="#ffffff" stroke-width="0.8" opacity="0.35" />
+  <line x1="91" y1="0" x2="91" y2="120" stroke="#ffffff" stroke-width="0.8" opacity="0.35" />
+
+  <!-- Silver micro-fingers -->
+  <g stroke="#ffffff" stroke-width="0.3" opacity="0.15">
+    <line x1="10" y1="0" x2="10" y2="120" />
+    <line x1="20" y1="0" x2="20" y2="120" />
+    <line x1="38" y1="0" x2="38" y2="120" />
+    <line x1="48" y1="0" x2="48" y2="120" />
+    <line x1="72" y1="0" x2="72" y2="120" />
+    <line x1="82" y1="0" x2="82" y2="120" />
+    <line x1="100" y1="0" x2="100" y2="120" />
+    <line x1="110" y1="0" x2="110" y2="120" />
+  </g>
+</svg>

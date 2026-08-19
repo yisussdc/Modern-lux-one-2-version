@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Lux One (ML1) - Solución corporativa integral en Florida para techado, mitigación de daños por agua, restauración y remodelación premium. Una llamada, un solo equipo, restauración completa.">
+    <meta name="keywords" content="roofing florida, mitigacion agua, remodelacion lujo, restauracion casa tormenta, modern lux one, ml1 florida">
+    <meta name="author" content="Modern Lux One">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.modernluxone.com/">
+    <meta property="og:title" content="Modern Lux One | Restauración Completa y Remodelación Premium">
+    <meta property="og:description" content="Protege, restaura y transforma tu propiedad en Florida. Inspección gratuita para techado, mitigación de agua y remodelación de lujo.">
+    <meta property="og:image" content="images/hero_background.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Modern Lux One | Restauración Completa y Remodelación Premium">
+    <meta property="twitter:description" content="Protege, restaura y transforma tu propiedad en Florida. Inspección gratuita para techado, mitigación de agua y remodelación de lujo.">
+
+    <title>Modern Lux One | Restauración Completa y Remodelación Premium en Florida</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Overlay for closing sidebar -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Sidebar Navigation (Left Drawer) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <span class="logo-text-lux">MODERN LUX</span>
+                <span class="logo-text-one">ONE</span>
+            </div>
+            <button class="close-sidebar" id="closeSidebarBtn" aria-label="Cerrar menú">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li class="has-dropdown">
+                    <button class="dropdown-toggle" id="servicesDropdownToggle">
+                        <span>Servicios</span>
+                        <svg class="dropdown-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu" id="servicesDropdownMenu">
+                        <li><a href="#servicios-techado" class="dropdown-link">Techado (Roofing)</a></li>
+                        <li><a href="#servicios-mitigacion" class="dropdown-link">Mitigación</a></li>
+                        <li><a href="#servicios-restauracion" class="dropdown-link">Restauración</a></li>
+                        <li><a href="#servicios-remodelacion" class="dropdown-link">Remodelación Premium</a></li>
+                    </ul>
+                </li>
+                <li><a href="#proceso" class="nav-link">Recorrido del Cliente</a></li>
+                <li><a href="#reclamos" class="nav-link">Reclamos de Seguro</a></li>
+                <li><a href="#proyectos" class="nav-link">Proyectos (Antes/Después)</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto & Agenda</a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="footer-phone-box">
+                <span class="phone-label">Llama hoy mismo:</span>
+                <a href="tel:+18336517663" class="footer-phone">+1 (833) 651-7663</a>
+            </div>
+            <p class="license-info">Florida Lic: CCC1332211 / CGC1522334</p>
+        </div>
+    </aside>
+
+    <!-- Top Sticky Header -->
+    <header class="header" id="header">
+        <div class="header-container">
+            <button class="open-sidebar" id="openSidebarBtn" aria-label="Abrir menú">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <a href="#inicio" class="logo">
+                <svg class="logo-svg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="50,10 90,40 80,40 50,20 20,40 10,40" fill="#C5A059"/>
+                    <rect x="42" y="32" width="16" height="38" fill="#C5A059"/>
+                    <rect x="25" y="47" width="12" height="23" fill="#8C8C8C"/>
+                    <rect x="63" y="47" width="12" height="23" fill="#8C8C8C"/>
+                </svg>
+                <div class="logo-text">
+                    <span class="brand-lux">MODERN LUX</span>
+                    <span class="brand-one">ONE</span>
+                </div>
+            </a>
+
+            <div class="header-actions">
+                <a href="tel:+18336517663" class="phone-cta" id="headerPhoneCta">
+                    <span class="phone-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                        </svg>
+                    </span>
+                    <span class="phone-number">+1 (833) 651-7663</span>
+                </a>
+                <a href="#contacto" class="btn btn-primary btn-header-cta">AGENDA TU INSPECCIÓN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+        <!-- Section: Inicio (Hero / Above the Fold) -->
+        <section id="inicio" class="section-hero">
+            <div class="hero-bg-slider" id="heroBgSlider">
+                <!-- Slides will be loaded as background images -->
+                <div class="hero-slide active" id="hero-slide-1"></div>
+                <div class="hero-slide" id="hero-slide-2"></div>
+                <div class="hero-slide" id="hero-slide-3"></div>
+                <div class="hero-overlay"></div>
+            </div>
+            
+            <div class="container hero-content">
+                <div class="hero-badge">
+                    <span class="badge-line"></span> El Concepto ONE en Construcción y Restauración
+                </div>
+                <h1 class="hero-title">UNA LLAMADA. UN EQUIPO. <br><span class="highlight">RESTAURACIÓN COMPLETA.</span></h1>
+                <p class="hero-subtitle">Protege. Restaura. Transforma tu propiedad en Florida con un estándar arquitectónico inigualable.</p>
+                <div class="hero-ctas">
+                    <a href="#contacto" class="btn btn-primary btn-large btn-glow">AGENDA TU INSPECCIÓN GRATUITA</a>
+                    <a href="#servicios" class="btn btn-secondary btn-large">Descubrir Soluciones</a>
+                </div>
+                
+                <div class="hero-features-strip">
+                    <div class="strip-item">
+                        <span class="strip-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></span>
+                        <span class="strip-text">Solución 100% Coordinada (ONE-Call)</span>
+                    </div>
+                    <div class="strip-item">
+                        <span class="strip-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></span>
+                        <span class="strip-text">Asistencia en Documentación de Daños</span>
+                    </div>
+                    <div class="strip-item">
+                        <span class="strip-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></span>
+                        <span class="strip-text">Licencia General & de Techado en FL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Nosotros -->
+        <section id="nosotros" class="section-about">
+            <div class="container">
+                <div class="grid grid-2-cols align-center gap-large">
+                    <div class="about-visual">
+                        <div class="about-image-container">
+                            <img src="images/about_hero.jpg" alt="Equipo Modern Lux One en Florida" class="about-main-img">
+                            <div class="about-badge-lux">
+                                <span class="badge-number">ONE</span>
+                                <span class="badge-label">Equipo, Sin Intermediarios</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <span class="section-pre-title">Quiénes Somos</span>
+                        <h2 class="section-title">El Concepto ONE: Una Sola Responsabilidad</h2>
+                        <p class="section-desc">En el mercado de la construcción en Florida, es común que los propietarios tengan que lidiar con múltiples contratistas independientes: un techador para el techo, una compañía de mitigación para secar el agua, y un constructor diferente para reparar los interiores. Esto causa retrasos, presupuestos inflados y problemas de comunicación.</p>
+                        
+                        <div class="concept-one-box">
+                            <h4 class="concept-title"><span class="highlight-gold">Modern Lux One</span> elimina esa complejidad:</h4>
+                            <ul class="concept-list">
+                                <li>
+                                    <span class="concept-icon">✓</span>
+                                    <div><strong>Un solo punto de contacto:</strong> Gestionamos todo el ciclo desde el daño inicial hasta los acabados de lujo finales.</div>
+                                </li>
+                                <li>
+                                    <span class="concept-icon">✓</span>
+                                    <div><strong>Coordinación profesional:</strong> Aseguramos que la mitigación de agua y la reconstrucción estén perfectamente sincronizadas para evitar moho y daños estructurales secundarios.</div>
+                                </li>
+                                <li>
+                                    <span class="concept-icon">✓</span>
+                                    <div><strong>Enfoque Premium:</strong> No solo reparamos la estructura; elevamos el diseño de tu propiedad con acabados elegantes y modernos.</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Servicios -->
+        <section id="servicios" class="section-services bg-dark">
+            <div class="container">
+                <div class="text-center max-w-700">
+                    <span class="section-pre-title gold">Nuestros Servicios Integrales</span>
+                    <h2 class="section-title white">UN SOLO EQUIPO. TODA LA SOLUCIÓN.</h2>
+                    <p class="section-desc grey">Ofrecemos un portafolio completo de soluciones coordinadas. No necesitas contratar a nadie más.</p>
+                </div>
+                
+                <div class="grid grid-4-cols gap-medium services-grid">
+                    
+                    <!-- Card 1: Techado -->
+                    <div class="service-card" id="servicios-techado">
+                        <div class="service-icon-box">
+                            <!-- Roofing Icon (House Roof) -->
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 12L12 3L22 12" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 21V12H15V21" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 3V21" stroke="#C5A059" stroke-width="0.5" stroke-dasharray="2 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Techado (Roofing)</h3>
+                        <p class="service-card-text">Inspecciones avanzadas de daños por tormentas, reparaciones localizadas de alta durabilidad y reemplazos completos de techos (teja, metal y planos) con estándares de resistencia para huracanes.</p>
+                        <ul class="service-sub-list">
+                            <li>Reemplazo certificado por huracanes</li>
+                            <li>Detección de filtraciones con termografía</li>
+                            <li>Reparaciones de emergencia inmediatas</li>
+                        </ul>
+                        <a href="#contacto" class="service-card-link">Solicitar Inspección →</a>
+                    </div>
+                    
+                    <!-- Card 2: Mitigación -->
+                    <div class="service-card" id="servicios-mitigacion">
+                        <div class="service-icon-box">
+                            <!-- Water Mitigation Icon (Water Drop / Humidity Control) -->
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C12 2 6 8.5 6 12C6 15.3137 8.68629 18 12 18C15.3137 18 18 15.3137 18 12C18 8.5 12 2 12 2Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 12H16" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M10 15H14" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Mitigación de Daños</h3>
+                        <p class="service-card-text">Extracción inmediata de agua, secado estructural con deshumidificadores industriales y sanitización profunda para evitar el crecimiento bacteriano y de moho dañino después de inundaciones.</p>
+                        <ul class="service-sub-list">
+                            <li>Extracción de agua 24/7 en Florida</li>
+                            <li>Monitoreo digital de humedad interna</li>
+                            <li>Remoción segura de materiales contaminados</li>
+                        </ul>
+                        <a href="#contacto" class="service-card-link">Reportar Emergencia →</a>
+                    </div>
+                    
+                    <!-- Card 3: Restauración -->
+                    <div class="service-card" id="servicios-restauracion">
+                        <div class="service-icon-box">
+                            <!-- Restoration Icon (Hammer & House Interior) -->
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 21H3V13H11V21Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M21 21H15V13H21V21Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M17 3L21 7L17 11" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 7H20" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Restauración</h3>
+                        <p class="service-card-text">Reconstrucción interior total tras daños por agua o viento. Reparación de drywall, pintura profesional premium, instalación de pisos resistentes al agua y fabricación de gabinetes a la medida.</p>
+                        <ul class="service-sub-list">
+                            <li>Reparación estructural de Drywall y marcos</li>
+                            <li>Instalación de gabinetes premium y encimeras</li>
+                            <li>Pisos y acabados arquitectónicos</li>
+                        </ul>
+                        <a href="#contacto" class="service-card-link">Cotizar Reconstrucción →</a>
+                    </div>
+                    
+                    <!-- Card 4: Remodelación -->
+                    <div class="service-card" id="servicios-remodelacion">
+                        <div class="service-icon-box">
+                            <!-- Remodeling Icon (Diamond/Lux/Architectural tools) -->
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 3H18L22 9L12 21L2 9L6 3Z" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 3L16 9L12 21L8 9L12 3Z" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M2 9H22" stroke="#C5A059" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card-title">Remodelación Premium</h3>
+                        <p class="service-card-text">Transformación de espacios residenciales y comerciales con un enfoque premium. Especialistas en cocinas modernas de lujo, baños estilo spa y ampliaciones con acabados de primera calidad.</p>
+                        <ul class="service-sub-list">
+                            <li>Diseño tridimensional a medida</li>
+                            <li>Materiales importados de alta gama</li>
+                            <li>Optimización espacial inteligente</li>
+                        </ul>
+                        <a href="#contacto" class="service-card-link">Planificar Remodelación →</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Claims (Asistencia de Reclamos) -->
+        <section id="reclamos" class="section-claims">
+            <div class="container">
+                <div class="grid grid-2-cols align-center gap-large">
+                    <div class="claims-text">
+                        <span class="section-pre-title">Cumplimiento Legal & Claridad</span>
+                        <h2 class="section-title">Asistencia con Reclamos de Seguro</h2>
+                        <p class="section-desc">Entendemos que lidiar con los seguros tras un desastre en Florida puede ser estresante y confuso. Como parte de nuestra promesa **ONE**, ayudamos a simplificar el proceso inicial para que puedas recuperar la normalidad lo antes posible.</p>
+                        
+                        <div class="claims-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">✔</div>
+                                <div><strong>Documentación detallada del daño:</strong> Generamos reportes técnicos con fotos de alta resolución, lecturas de humedad y estimaciones precisas de costos de reparación.</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">✔</div>
+                                <div><strong>Asistencia en el reporte inicial:</strong> Te ayudamos a recopilar y ordenar los archivos necesarios para reportar el siniestro a tu aseguradora.</div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">✔</div>
+                                <div><strong>Información técnica clara:</strong> Explicamos las necesidades estructurales de la propiedad directamente a los inspectores de la compañía de seguros.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="claims-disclaimer-box">
+                        <div class="disclaimer-header">
+                            <svg class="disclaimer-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                            <h3>Aviso de Cumplimiento Legal en Florida</h3>
+                        </div>
+                        <div class="disclaimer-body">
+                            <p><strong>Modern Lux One no es una firma de ajuste público.</strong></p>
+                            <p>No representamos a los propietarios de manera legal, no negociamos la cobertura del seguro ni intermediamos en la liquidación de reclamos financieros en nombre de los clientes. Nuestra asistencia se limita exclusivamente a la provisión de estimados técnicos detallados de construcción, documentación física del daño de la propiedad y la ejecución de los servicios de mitigación, reparación y restauración autorizados bajo contrato.</p>
+                            <p class="disclaimer-alert-text"><em>Recomendamos a los propietarios consultar a su ajustador público licenciado o abogado de seguros de confianza para cualquier disputa legal o negociación contractual con su compañía de seguros.</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Recorrido del Cliente (Our Process) -->
+        <section id="proceso" class="section-process bg-light">
+            <div class="container">
+                <div class="text-center max-w-700">
+                    <span class="section-pre-title">El Camino a la Tranquilidad</span>
+                    <h2 class="section-title">El Recorrido del Cliente: Del Daño a lo Moderno</h2>
+                    <p class="section-desc">Garantizamos una experiencia fluida y transparente en cada etapa de la reconstrucción de tu propiedad. Así es como trabajamos contigo:</p>
+                </div>
+
+                <div class="process-timeline">
+                    <!-- Line decoration -->
+                    <div class="timeline-line"></div>
+
+                    <!-- Step 1 -->
+                    <div class="timeline-step" data-step="1">
+                        <div class="step-marker">1</div>
+                        <div class="step-content">
+                            <span class="step-status status-danger">Daño Inicial</span>
+                            <h4 class="step-title">1. Reporte de Daños</h4>
+                            <p class="step-desc">Ocurre una tormenta, filtración de agua o fuga interna. Nos llamas de inmediato para detener el avance del daño.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-step" data-step="2">
+                        <div class="step-marker">2</div>
+                        <div class="step-content">
+                            <span class="step-status status-warning">Inspección</span>
+                            <h4 class="step-title">2. Inspección Gratuita</h4>
+                            <p class="step-desc">Enviamos a un técnico certificado con cámaras térmicas y drones para evaluar el alcance del daño en la propiedad.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-step" data-step="3">
+                        <div class="step-marker">3</div>
+                        <div class="step-content">
+                            <span class="step-status status-warning">Evidencias</span>
+                            <h4 class="step-title">3. Documentación</h4>
+                            <p class="step-desc">Elaboramos un reporte fotográfico y de lecturas estructurales exhaustivo sobre el área dañada.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-step" data-step="4">
+                        <div class="step-marker">4</div>
+                        <div class="step-content">
+                            <span class="step-status status-info">Seguro</span>
+                            <h4 class="step-title">4. Soporte Técnico en Reporte</h4>
+                            <p class="step-desc">Te brindamos las estimaciones detalladas de costos y el reporte de daños para que notifiques a tu seguro.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-step" data-step="5">
+                        <div class="step-marker">5</div>
+                        <div class="step-content">
+                            <span class="step-status status-info">Acción Rápida</span>
+                            <h4 class="step-title">5. Mitigación de Daño</h4>
+                            <p class="step-desc">Extracción de agua, secado de paredes y remoción de escombros de manera inmediata para evitar moho.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="timeline-step" data-step="6">
+                        <div class="step-marker">6</div>
+                        <div class="step-content">
+                            <span class="step-status status-success">Reparación</span>
+                            <h4 class="step-title">6. Reparación Estructural</h4>
+                            <p class="step-desc">Realizamos los trabajos de techado y reconstrucción de elementos dañados (drywall, vigas).</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div class="timeline-step" data-step="7">
+                        <div class="step-marker">7</div>
+                        <div class="step-content">
+                            <span class="step-status status-success">Estilo Lux</span>
+                            <h4 class="step-title">7. Restauración & Diseño</h4>
+                            <p class="step-desc">Aplicamos los acabados de pintura fina, pisos nuevos, gabinetes premium y detalles estéticos de lujo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 8 -->
+                    <div class="timeline-step" data-step="8">
+                        <div class="step-marker">8</div>
+                        <div class="step-content">
+                            <span class="step-status status-premium">Completado</span>
+                            <h4 class="step-title">8. Entrega Final</h4>
+                            <p class="step-desc">Tu propiedad queda totalmente transformada, segura, moderna y con un valor estético renovado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Proyectos Antes / Después -->
+        <section id="proyectos" class="section-projects">
+            <div class="container">
+                <div class="text-center max-w-700">
+                    <span class="section-pre-title">Prueba Social & Resultados</span>
+                    <h2 class="section-title">Nuestras Transformaciones (Antes / Después)</h2>
+                    <p class="section-desc">Desliza la barra central a la izquierda o derecha en cada imagen interactiva para apreciar el cambio real que logramos.</p>
+                    
+                    <div class="project-tabs">
+                        <button class="tab-btn active" id="tabRoofing" data-project="roofing">Restauración de Techado</button>
+                        <button class="tab-btn" id="tabKitchen" data-project="kitchen">Remodelación Premium de Cocina</button>
+                    </div>
+                </div>
+
+                <!-- Comparison Container -->
+                <div class="comparison-wrapper">
+                    
+                    <!-- Case 1: Roofing (Active by default) -->
+                    <div class="comparison-container active" id="project-roofing">
+                        <div class="image-before">
+                            <img src="images/before_roof.jpg" alt="Techo dañado antes de Modern Lux One">
+                            <span class="label-badge label-before">Antes (Daño por Huracán)</span>
+                        </div>
+                        <div class="image-after">
+                            <img src="images/after_roof.jpg" alt="Techo nuevo instalado por Modern Lux One">
+                            <span class="label-badge label-after">Después (Techo Premium ML1)</span>
+                        </div>
+                        <div class="slider-handle" id="sliderHandleRoof">
+                            <div class="handle-line"></div>
+                            <div class="handle-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                                </svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Case 2: Kitchen (Hidden by default) -->
+                    <div class="comparison-container" id="project-kitchen">
+                        <div class="image-before">
+                            <img src="images/before_kitchen.jpg" alt="Cocina dañada por agua antes de la restauración">
+                            <span class="label-badge label-before">Antes (Inundación de Cocina)</span>
+                        </div>
+                        <div class="image-after">
+                            <img src="images/after_kitchen.jpg" alt="Cocina de lujo moderna restaurada">
+                            <span class="label-badge label-after">Después (Cocina Premium Lux)</span>
+                        </div>
+                        <div class="slider-handle" id="sliderHandleKitchen">
+                            <div class="handle-line"></div>
+                            <div class="handle-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l4-4 4 4m0 6l-4 4-4-4" />
+                                </svg>
+                            </div>
+                            <div class="handle-line"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center project-tagline">
+                    <p>Cuidamos cada detalle arquitectónico para devolverle la plusvalía a su inversión.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Contacto / Formulario de Leads -->
+        <section id="contacto" class="section-contact bg-dark">
+            <div class="container">
+                <div class="grid grid-2-cols gap-large">
+                    <div class="contact-info-block">
+                        <span class="section-pre-title gold">Comienza Tu Proyecto</span>
+                        <h2 class="section-title white">Agenda Tu Inspección Gratuita de Daños</h2>
+                        <p class="section-desc grey">No esperes a que un pequeño problema de humedad o tejas sueltas se convierta en una reparación estructural costosa de miles de dólares. Nuestro equipo evaluará tu propiedad sin compromiso.</p>
+                        
+                        <div class="quick-stats-grid">
+                            <div class="stat-box">
+                                <span class="stat-number gold">1</span>
+                                <span class="stat-label">Llamada telefónica para coordinar todo</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number gold">100%</span>
+                                <span class="stat-label">Inspección física y digital sin costo</span>
+                            </div>
+                            <div class="stat-box">
+                                <span class="stat-number gold">Lic.</span>
+                                <span class="stat-label">Certificados en el Estado de Florida</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-details">
+                            <div class="detail-item">
+                                <span class="detail-icon">📞</span>
+                                <div>
+                                    <h4>Línea Directa (ONE-Call)</h4>
+                                    <a href="tel:+18336517663" class="gold-link">+1 (833) 651-7663</a>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">✉</span>
+                                <div>
+                                    <h4>Correo Electrónico</h4>
+                                    <a href="mailto:info@modernluxone.com" class="gold-link">info@modernluxone.com</a>
+                                </div>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-icon">📍</span>
+                                <div>
+                                    <h4>Cobertura de Servicio</h4>
+                                    <p class="grey-text">Todo el estado de Florida (Miami-Dade, Broward, Palm Beach, Orlando y Tampa Bay).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card" id="formCard">
+                        <h3 class="form-title">Evaluar Mi Propiedad</h3>
+                        <p class="form-subtitle">Completa el formulario en 1 minuto para calificar tu inspección gratuita.</p>
+                        
+                        <form id="leadForm" novalidate>
+                            
+                            <!-- Field 1: Name -->
+                            <div class="form-group">
+                                <label for="clientName">Nombre Completo <span class="required">*</span></label>
+                                <input type="text" id="clientName" name="name" class="form-control" placeholder="Escribe tu nombre y apellido" required>
+                                <span class="error-msg" id="nameError">Por favor, escribe tu nombre completo.</span>
+                            </div>
+                            
+                            <!-- Row: Phone & Zip -->
+                            <div class="form-row">
+                                <div class="form-group col-6">
+                                    <label for="clientPhone">Teléfono de Contacto <span class="required">*</span></label>
+                                    <input type="tel" id="clientPhone" name="phone" class="form-control" placeholder="(000) 000-0000" required>
+                                    <span class="error-msg" id="phoneError">Ingresa un número telefónico válido.</span>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="clientZip">Código Postal de Florida <span class="required">*</span></label>
+                                    <input type="text" id="clientZip" name="zipcode" class="form-control" placeholder="33101" maxlength="5" required>
+                                    <span class="error-msg" id="zipError">Código postal de Florida requerido (5 dígitos).</span>
+                                </div>
+                            </div>
+
+                            <!-- Field: Owner (Select/Radio) -->
+                            <div class="form-group">
+                                <label>¿Es usted el propietario legal del inmueble? <span class="required">*</span></label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="propertyOwner" value="si" required>
+                                        <span>Sí, soy el dueño</span>
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="propertyOwner" value="no" required>
+                                        <span>No, soy inquilino / representante</span>
+                                    </label>
+                                </div>
+                                <span class="error-msg" id="ownerError">Debes seleccionar una opción.</span>
+                            </div>
+
+                            <!-- Field: Damage Type (Select) -->
+                            <div class="form-group">
+                                <label for="damageType">¿Qué tipo de necesidad observa hoy? <span class="required">*</span></label>
+                                <select id="damageType" name="damageType" class="form-control" required>
+                                    <option value="" disabled selected>Selecciona la opción principal...</option>
+                                    <option value="agua">Daño por Agua / Humedad / Fuga</option>
+                                    <option value="viento">Daño por Viento / Huracán (Techo o Ventanas)</option>
+                                    <option value="granizo">Daño por Granizo o Tormenta eléctrica</option>
+                                    <option value="remodelacion">Remodelación Premium (Sin Daño)</option>
+                                    <option value="otro">Inspección de Mantenimiento General</option>
+                                </select>
+                                <span class="error-msg" id="damageError">Selecciona un tipo de servicio.</span>
+                            </div>
+
+                            <!-- Field: Roof Age -->
+                            <div class="form-group">
+                                <label for="roofAge">¿Cuál es la antigüedad aproximada del techo?</label>
+                                <select id="roofAge" name="roofAge" class="form-control">
+                                    <option value="desconocida" selected>No estoy seguro</option>
+                                    <option value="nuevo">Menos de 5 años</option>
+                                    <option value="medio">Entre 5 y 12 años</option>
+                                    <option value="antiguo">Más de 12 años (Requiere revisión preventiva)</option>
+                                </select>
+                            </div>
+
+                            <!-- Field: Brief description -->
+                            <div class="form-group">
+                                <label for="description">Cuéntanos brevemente sobre tu caso (Opcional)</label>
+                                <textarea id="description" name="description" class="form-control" rows="3" placeholder="Ej: Filtración en el techo del baño tras la última tormenta de la semana pasada..."></textarea>
+                            </div>
+
+                            <!-- Submit button -->
+                            <button type="submit" class="btn btn-primary btn-block btn-submit" id="btnSubmitForm">
+                                <span class="btn-text">SOLICITAR INSPECCIÓN GRATUITA</span>
+                                <span class="spinner" id="formSpinner"></span>
+                            </button>
+                            
+                            <p class="form-privacy-note">Respetamos tus datos. Al enviar este formulario, aceptas ser contactado por un especialista de Modern Lux One para programar tu visita.</p>
+                        </form>
+                    </div>
+
+                    <!-- Success State Card (Hidden by default) -->
+                    <div class="contact-form-card form-success-state" id="formSuccessCard">
+                        <div class="success-icon-wrapper">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#C5A059" stroke-width="2"/>
+                                <path d="M8 12.5L10.5 15L16 9.5" stroke="#C5A059" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>¡Solicitud Recibida con Éxito!</h3>
+                        <p class="success-main-text">Gracias por tu confianza en <strong>Modern Lux One</strong>.</p>
+                        <p class="success-sub-text">Hemos asignado tu caso a nuestro especialista de zona. Nos comunicaremos contigo al teléfono provisto en un plazo menor a <strong>2 horas laborables</strong> para confirmar la fecha y hora de tu inspección técnica gratuita.</p>
+                        
+                        <div class="success-summary">
+                            <h4>Resumen del reporte generado:</h4>
+                            <ul class="summary-details">
+                                <li><strong>Número de Caso:</strong> <span id="summaryCaseNo" class="gold-text">ML1-7649</span></li>
+                                <li><strong>Prioridad:</strong> <span id="summaryPriority" class="priority-badge">Evaluación Programada</span></li>
+                            </ul>
+                        </div>
+
+                        <button class="btn btn-secondary btn-block" id="btnResetForm">Solicitar otra evaluación</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand-col">
+                <div class="footer-logo">
+                    <span class="logo-text-lux">MODERN LUX</span>
+                    <span class="logo-text-one">ONE</span>
+                </div>
+                <p class="footer-brand-desc">Solución corporativa ONE-Call en Florida para la restauración integral y remodelación de propiedades comerciales y residenciales con altos estándares de lujo y solidez constructiva.</p>
+                <div class="footer-licenses">
+                    <p><strong>Licencias del Estado de Florida:</strong></p>
+                    <p>General Contractor: CGC1522334</p>
+                    <p>Roofing Contractor: CCC1332211</p>
+                </div>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Mapa del Sitio</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios Integrales</a></li>
+                    <li><a href="#proceso">Proceso "Del Daño a lo Moderno"</a></li>
+                    <li><a href="#reclamos">Asistencia de Reclamos</a></li>
+                    <li><a href="#proyectos">Antes & Después</a></li>
+                    <li><a href="#contacto">Contacto & Cita</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links-col">
+                <h4>Servicios ONE</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicios-techado">Reparación & Reemplazo de Techado</a></li>
+                    <li><a href="#servicios-mitigacion">Mitigación de Agua e Inundaciones</a></li>
+                    <li><a href="#servicios-restauracion">Restauración de Drywall y Estructuras</a></li>
+                    <li><a href="#servicios-remodelacion">Remodelación de Cocinas y Baños Premium</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact-col">
+                <h4>Oficina & Cobertura</h4>
+                <p class="footer-address">
+                    📍 <strong>Sede Operativa:</strong><br>
+                    1200 Brickell Ave, Suite 1900<br>
+                    Miami, FL 33131
+                </p>
+                <p class="footer-hours">
+                    ⏰ <strong>Horario de atención:</strong><br>
+                    Lunes a Viernes: 8:00 AM - 6:00 PM<br>
+                    Sábados: 9:00 AM - 2:00 PM<br>
+                    <em>* Emergencias de Mitigación de Agua: Soporte 24/7.</em>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p class="copyright">&copy; 2026 Modern Lux One LLC. Todos los derechos reservados. Diseñado para cumplimiento legal y excelencia arquitectónica.</p>
+                <ul class="footer-legal-links">
+                    <li><a href="#reclamos">Aviso de Ajuste Público</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">Política de Privacidad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="index.js"></script>
+</body>
+</html>
