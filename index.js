@@ -388,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Petición a tu API local
-                const response = await fetch('http://127.0.0.1:8000/api/solicitar-inspeccion', {
+                const response = await fetch('https://backend-inspecciones-72xj.onrender.com', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(datosFormulario)
