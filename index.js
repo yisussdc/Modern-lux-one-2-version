@@ -248,44 +248,38 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', checkTimelineScroll);
     checkTimelineScroll(); // Run once initially
 
-
-    /* ==========================================================================
+/* ==========================================================================
        7. Lead Form Validation & Dynamic Submission
        ========================================================================== */
     const leadForm = document.getElementById('leadForm');
     const formCard = document.getElementById('formCard');
     const formSuccessCard = document.getElementById('formSuccessCard');
     const btnSubmitForm = document.getElementById('btnSubmitForm');
-    const formSpinner = document.getElementById('formSpinner');
     const btnResetForm = document.getElementById('btnResetForm');
     
     // Auto-format phone input: (XXX) XXX-XXXX
     const phoneInput = document.getElementById('clientPhone');
-    phoneInput.addEventListener('input', (e) => {
-        let input = e.target.value.replace(/\D/g, ''); // strip all non-digits
-        if (input.length > 10) {
-            input = input.substring(0, 10);
-        }
-        
-        let formatted = '';
-        if (input.length > 0) {
-            formatted += '(' + input.substring(0, 3);
-        }
-        if (input.length > 3) {
-            formatted += ') ' + input.substring(3, 6);
-        }
-        if (input.length > 6) {
-            formatted += '-' + input.substring(6, 10);
-        }
-        
-        e.target.value = formatted;
-    });
+    if (phoneInput) {
+        phoneInput.addEventListener('input', (e) => {
+            let input = e.target.value.replace(/\D/g, ''); // strip non-digits
+            if (input.length > 10) input = input.substring(0, 10);
+            
+            let formatted = '';
+            if (input.length > 0) formatted += '(' + input.substring(0, 3);
+            if (input.length > 3) formatted += ') ' + input.substring(3, 6);
+            if (input.length > 6) formatted += '-' + input.substring(6, 10);
+            
+            e.target.value = formatted;
+        });
+    }
 
     // ZIP code digits only validation
     const zipInput = document.getElementById('clientZip');
-    zipInput.addEventListener('input', (e) => {
-        e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
-    });
+    if (zipInput) {
+        zipInput.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '').substring(0, 5);
+        });
+    }
 
     // Validation function
     function validateForm() {
@@ -311,10 +305,9 @@ document.addEventListener('DOMContentLoaded', () => {
             phoneGroup.classList.remove('has-error');
         }
         
-        // 3. Zip Code
+        // 3. Zip Code (Florida ZIPs: 32xxx, 33xxx, 34xxx)
         const zipGroup = zipInput.closest('.form-group');
         const rawZip = zipInput.value.trim();
-        // Florida Zip Codes generally start with 32, 33, 34
         const flZipRegex = /^(32|33|34)\d{3}$/;
         if (!flZipRegex.test(rawZip)) {
             zipGroup.classList.add('has-error');
@@ -353,13 +346,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return isValid;
     }
 
-    // Submit handler
+    // Submit handler para la API de FastAPI / Python
     if (leadForm) {
-        leadForm.addEventListener('submit', (e) => {
+        leadForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             if (!validateForm()) {
-                // Focus on the first error element
                 const firstError = document.querySelector('.form-group.has-error');
                 if (firstError) {
                     firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -367,41 +359,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
             
-            // Show loading state
             btnSubmitForm.disabled = true;
             btnSubmitForm.classList.add('loading');
             
-            // Simulate API Request
-            setTimeout(() => {
-                // Generate random case number
-                const randomCase = 'ML1-' + Math.floor(1000 + Math.random() * 9000);
-                document.getElementById('summaryCaseNo').textContent = randomCase;
-                
-                // Define priority badge text
-                const damageVal = document.getElementById('damageType').value;
-                const priorityBadge = document.getElementById('summaryPriority');
-                if (damageVal === 'agua' || damageVal === 'viento') {
-                    priorityBadge.textContent = 'Emergencia Rápida';
-                    priorityBadge.style.backgroundColor = 'var(--color-danger)';
-                    priorityBadge.style.color = '#fff';
+            // Mapeo de propietario
+            const ownerRadio = document.querySelector('input[name="propertyOwner"]:checked');
+            const propietarioValor = ownerRadio ? (ownerRadio.value === 'si' ? 'Sí, es propietario' : 'No es propietario') : 'No especificado';
+
+            // Mapeo de antigüedad de techo
+            const roofAgeSelect = document.getElementById('roofAge');
+            const roofAgeValue = roofAgeSelect ? roofAgeSelect.options[roofAgeSelect.selectedIndex].text : 'No especificado';
+
+            // Mapeo de tipo de necesidad
+            const damageSelect = document.getElementById('damageType');
+            const damageValue = damageSelect ? damageSelect.options[damageSelect.selectedIndex].text : 'No especificado';
+
+            // Construir el JSON exacto que espera tu main.py
+            const datosFormulario = {
+                nombre: document.getElementById('clientName').value.trim(),
+                telefono: document.getElementById('clientPhone').value,
+                codigo_postal: document.getElementById('clientZip').value.trim(),
+                propietario: propietarioValor,
+                necesidad: damageValue,
+                antiguedad_techo: roofAgeValue,
+                detalles_caso: document.getElementById('description').value.trim() || 'Sin detalles adicionales',
+                acepto_terminos: true
+            };
+
+            try {
+                // Petición a tu API local
+                const response = await fetch('http://127.0.0.1:8000/api/solicitar-inspeccion', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(datosFormulario)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    const randomCase = 'ML1-' + Math.floor(1000 + Math.random() * 9000);
+                    const summaryCaseEl = document.getElementById('summaryCaseNo');
+                    if (summaryCaseEl) summaryCaseEl.textContent = randomCase;
+                    
+                    formCard.style.display = 'none';
+                    formSuccessCard.classList.add('active');
+                    document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
                 } else {
-                    priorityBadge.textContent = 'Evaluación Programada';
-                    priorityBadge.style.backgroundColor = 'var(--color-gold)';
-                    priorityBadge.style.color = 'var(--color-bg-dark)';
+                    alert('Error del servidor: ' + (result.detail || 'No se pudo procesar la solicitud.'));
                 }
-                
-                // Hide loader, reset submit button
+            } catch (error) {
+                console.error('Error de red/conexión:', error);
+                alert('No se pudo conectar con el servidor de Python. Asegúrate de que uvicorn esté corriendo en el puerto 8000.');
+            } finally {
                 btnSubmitForm.disabled = false;
                 btnSubmitForm.classList.remove('loading');
-                
-                // Show Success Screen
-                formCard.style.display = 'none';
-                formSuccessCard.classList.add('active');
-                
-                // Scroll to top of section
-                document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-                
-            }, 1800);
+            }
         });
     }
     
@@ -412,10 +424,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formSuccessCard.classList.remove('active');
             formCard.style.display = 'block';
             
-            // Clear any error states
             const errorGroups = document.querySelectorAll('.form-group.has-error');
             errorGroups.forEach(group => group.classList.remove('has-error'));
         });
     }
-
-});
+})
