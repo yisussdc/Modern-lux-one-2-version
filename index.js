@@ -401,7 +401,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     const summaryCaseEl = document.getElementById('summaryCaseNo');
                     if (summaryCaseEl) summaryCaseEl.textContent = randomCase;
                     
-                    formCard.style.display = 'none';
+                    const contactoDiv = document.getElementById('contacto');
+                    if (contactoDiv) contactoDiv.style.display = 'none';
                     formSuccessCard.classList.add('active');
                     document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
                 } else {
