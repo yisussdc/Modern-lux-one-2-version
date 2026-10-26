@@ -409,7 +409,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (error) {
                 console.error('Error de red/conexión:', error);
-                alert('No se pudo conectar con el servidor de Python. Asegúrate de que uvicorn esté corriendo en el puerto 8000.');
             } finally {
                 btnSubmitForm.disabled = false;
                 btnSubmitForm.classList.remove('loading');
